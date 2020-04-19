@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
+import { NumberGeneratorService } from './number-generator.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CountingService {
 
-    constructor() { }
+    constructor(private numGen: NumberGeneratorService) { }
 
     getQuestion() {
-        const start = this.getNumber(0, 50);
-        const end = this.getNumber(start, start + 10);
+        const start = this.numGen.getRandomInteger(0, 50);
+        const end = this.numGen.getRandomInteger(start, start + 10);
         const sequence = [];
         for (let i = start; i <= end; i++) {
             sequence.push(i);
         }
 
-        const missingIndex = this.getNumber(0, sequence.length - 1);
+        const missingIndex = this.numGen.getRandomInteger(0, sequence.length - 1);
         const questionAnswer = sequence[missingIndex];
         sequence[missingIndex] = '_';
         return {
@@ -31,9 +32,5 @@ export class CountingService {
             res = true;
         }
         return res;
-    }
-
-    private getNumber(min, max) {
-        return Math.ceil(Math.random() * (max - min) + min);
     }
 }
