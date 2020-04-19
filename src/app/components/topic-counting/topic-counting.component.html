@@ -1,0 +1,17 @@
+<h4> What is the missing number? </h4>
+
+<div *ngFor="let question of questions" class='row no-gutters'>
+    <div class='col-12'>
+        <ng-container *ngFor='let number of question.detail'>
+            <span *ngIf="number !== '_'">
+                {{ number }}
+            </span>
+            <input (input)="mark($event, question)" style="width: 2rem" *ngIf="number === '_'" type='text'>
+
+        </ng-container>
+        <i *ngIf="question.correct !== undefined" class="fas" [ngClass]='{
+            "fa-check": question.correct,
+            "fa-times": !question.correct
+        }'></i>
+    </div>
+</div>
