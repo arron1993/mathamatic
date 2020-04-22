@@ -1,15 +1,17 @@
-<div *ngFor="let question of questions">
-    <div class='col-12'>
-        {{ question.detail }}
-        <input (input)="mark($event, question)" style="width: 2rem" type='text'>
+<div class='w-100 row no-gutters p-4' style="font-size: 3rem">
+    <div *ngFor="let question of questions" class='col-12 row no-gutters py-3'>
+        <div class='col-12 d-flex justify-content-center'>
+            {{ question.detail }}
+            <input (input)="mark($event, question)" style="width: 5rem" type='text' class='text-center'>
 
-        <i *ngIf="question.correct !== undefined" class="fas" [ngClass]='{
-            "fa-check": question.correct,
-            "fa-times": !question.correct
-        }'></i>
+            <i *ngIf="question.correct !== undefined" class="fas" [ngClass]='{
+                "fa-check": question.correct,
+                "fa-times": !question.correct
+            }'></i>
+        </div>
     </div>
-</div>
 
-<div>
-    <button (click)="addQuestion()"> New Question </button>
+    <div class='col-12'>
+        <button class='btn btn-c-primary' (click)="addQuestion()"> New Question </button>
+    </div>
 </div>

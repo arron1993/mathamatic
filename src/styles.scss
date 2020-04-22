@@ -23,3 +23,23 @@ a.no-style {
         cursor: inherit;
     }
 }
+
+.btn-c-primary {
+    background-color: #8F2D56;
+    color: white;
+}
+.btn-c-primary:hover  {
+    color: white;
+    filter: brightness(0.9);
+    transition: 0.2s;
+}
+.bg-c-primary {
+    background-color: #8F2D56;
+}
+
+.text-c-primary {
+    color: #8F2D56;
+}
+.bg-c-secondary {
+    background-color: #218380;
+}
