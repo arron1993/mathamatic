@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MultiplicationService } from '../../services/multiplication.service';
+
 @Component({
   selector: 'app-topic-multiplication',
   templateUrl: './topic-multiplication.component.html',
   styleUrls: ['./topic-multiplication.component.scss']
 })
 export class TopicMultiplicationComponent implements OnInit {
+    questions: any[] = [];
 
-  constructor() { }
+    constructor(public multiplicationService: MultiplicationService) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.addQuestion();
+    }
 
+    addQuestion() {
+        this.questions.push(this.multiplicationService.createQuestion());
+    }
 }
