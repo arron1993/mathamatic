@@ -1,8 +1,4 @@
 <h4> What is the missing number? </h4>
-
-<div *ngFor="let question of questions" class='row no-gutters'>
-    <app-question-display
-        [question]="question"
-        [service]="countingService">
-    </app-question-display>
-</div>
+<app-question-display
+    [service]="countingService">
+</app-question-display>

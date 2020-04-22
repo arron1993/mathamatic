@@ -1,8 +1,5 @@
 <h4> What is the result of? </h4>
 
-<div *ngFor="let question of questions" class='row no-gutters'>
-    <app-question-display
-        [question]="question"
-        [service]="additionService">
-    </app-question-display>
-</div>
+<app-question-display
+    [service]="additionService">
+</app-question-display>

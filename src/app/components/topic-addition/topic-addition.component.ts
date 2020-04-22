@@ -7,12 +7,7 @@ import { AdditionService } from '../../services/addition.service';
     styleUrls: ['./topic-addition.component.scss']
 })
 export class TopicAdditionComponent implements OnInit {
-    questions = [];
     constructor(public additionService: AdditionService) { }
 
-    ngOnInit() {
-        for (let i = 0; i < 5; i++) {
-            this.questions.push(this.additionService.createQuestion());
-        }
-    }
+    ngOnInit() { }
 }

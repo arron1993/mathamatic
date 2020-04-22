@@ -6,16 +6,21 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./question-display.component.scss']
 })
 export class QuestionDisplayComponent implements OnInit {
-    @Input() question;
+    questions: any[] = [];
     @Input() service;
 
     constructor() { }
 
     ngOnInit() {
+        this.addQuestion();
     }
 
     mark(event, question) {
         const res = this.service.markQuestion(question, event.target.value);
         question.correct = res;
+    }
+
+    addQuestion() {
+        this.questions.push(this.service.createQuestion());
     }
 }

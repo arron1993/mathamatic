@@ -8,15 +8,7 @@ import { MultiplicationService } from '../../services/multiplication.service';
   styleUrls: ['./topic-multiplication.component.scss']
 })
 export class TopicMultiplicationComponent implements OnInit {
-    questions: any[] = [];
-
     constructor(public multiplicationService: MultiplicationService) { }
 
-    ngOnInit() {
-        this.addQuestion();
-    }
-
-    addQuestion() {
-        this.questions.push(this.multiplicationService.createQuestion());
-    }
+    ngOnInit() { }
 }

@@ -8,15 +8,7 @@ import { DivisionService } from '../../services/division.service';
     styleUrls: ['./topic-division.component.scss']
 })
 export class TopicDivisionComponent implements OnInit {
-    questions: any[] = [];
-
     constructor(public divisionService: DivisionService) { }
 
-    ngOnInit() {
-        this.addQuestion();
-    }
-
-    addQuestion() {
-        this.questions.push(this.divisionService.createQuestion());
-    }
+    ngOnInit() {}
 }

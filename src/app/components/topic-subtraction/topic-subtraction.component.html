@@ -1,14 +1,5 @@
 <h4> What is the result of? </h4>
 
-<div *ngFor="let question of questions" class='row no-gutters'>
-    <app-question-display
-        [question]="question"
-        [service]="subtractionService">
-
-    </app-question-display>
-
-</div>
-
-<div class='col-12'>
-    <button (click)="addQuestion()"> New Question </button>
-</div>
+<app-question-display
+    [service]="subtractionService">
+</app-question-display>
