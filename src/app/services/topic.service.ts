@@ -16,7 +16,7 @@ export class TopicService {
         name: 'Subtraction',
         icon: 'fa-minus'
     }, {
-        name: 'Multiplcation',
+        name: 'Multiplication',
         icon: 'fa-times'
     }, {
         name: 'Division',
