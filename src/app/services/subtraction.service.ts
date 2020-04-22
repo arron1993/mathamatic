@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
+
 import { NumberGeneratorService } from './number-generator.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AdditionService {
+export class SubtractionService {
 
     constructor(private numGen: NumberGeneratorService) { }
 
     createQuestion() {
-        const first = this.numGen.getRandomInteger(0, 20);
-        const second = this.numGen.getRandomInteger(0, 20);
+        const firstNum = this.numGen.getRandomInteger(0, 50);
+        const secondNum = this.numGen.getRandomInteger(0, firstNum);
+
         return {
-            detail: `${first} + ${second} = `,
-            answer: first + second
+            detail: `${firstNum} - ${secondNum} = `,
+            answer: firstNum - secondNum
         };
     }
+
 
     markQuestion(question, answer) {
         let res = false;

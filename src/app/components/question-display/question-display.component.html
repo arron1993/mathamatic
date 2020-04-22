@@ -1,0 +1,9 @@
+<div class='col-12'>
+    {{ question.detail }}
+    <input (input)="mark($event, question)" style="width: 2rem" type='text'>
+
+    <i *ngIf="question.correct !== undefined" class="fas" [ngClass]='{
+        "fa-check": question.correct,
+        "fa-times": !question.correct
+    }'></i>
+</div>

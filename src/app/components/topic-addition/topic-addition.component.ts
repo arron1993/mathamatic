@@ -8,16 +8,11 @@ import { AdditionService } from '../../services/addition.service';
 })
 export class TopicAdditionComponent implements OnInit {
     questions = [];
-    constructor(private as: AdditionService) { }
+    constructor(public additionService: AdditionService) { }
 
     ngOnInit() {
         for (let i = 0; i < 5; i++) {
-            this.questions.push(this.as.getQuestion());
+            this.questions.push(this.additionService.createQuestion());
         }
-    }
-
-    mark(event, question) {
-        const res = this.as.markQuestion(question, event.target.value);
-        question.correct = res;
     }
 }

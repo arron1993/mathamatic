@@ -9,6 +9,7 @@ import { TopicCountingComponent } from './components/topic-counting/topic-counti
 import { TopicSubtractionComponent } from './components/topic-subtraction/topic-subtraction.component';
 import { TopicMultiplicationComponent } from './components/topic-multiplication/topic-multiplication.component';
 import { TopicDivisionComponent } from './components/topic-division/topic-division.component';
+import { QuestionDisplayComponent } from './components/question-display/question-display.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TopicDivisionComponent } from './components/topic-division/topic-divisi
     TopicSubtractionComponent,
     TopicMultiplicationComponent,
     TopicDivisionComponent,
+    QuestionDisplayComponent,
   ],
   imports: [
     BrowserModule,

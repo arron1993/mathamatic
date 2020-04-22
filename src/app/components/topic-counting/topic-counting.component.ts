@@ -8,17 +8,12 @@ import { CountingService } from '../../services/counting.service';
 })
 export class TopicCountingComponent implements OnInit {
 
-    constructor(private cs: CountingService) { }
+    constructor(public countingService: CountingService) { }
 
     questions = [];
     ngOnInit() {
         for (let i = 0; i < 5; i++) {
-            this.questions.push(this.cs.getQuestion());
+            this.questions.push(this.countingService.createQuestion());
         }
-    }
-
-    mark(event, question) {
-        const res = this.cs.markQuestion(question, event.target.value);
-        question.correct = res;
     }
 }

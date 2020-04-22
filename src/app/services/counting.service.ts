@@ -8,7 +8,7 @@ export class CountingService {
 
     constructor(private numGen: NumberGeneratorService) { }
 
-    getQuestion() {
+    createQuestion() {
         const start = this.numGen.getRandomInteger(0, 50);
         const end = this.numGen.getRandomInteger(start, start + 10);
         const sequence = [];
