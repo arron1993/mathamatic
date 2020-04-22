@@ -2,8 +2,15 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
+@font-face {
+    font-family: "Poppins";
+    src: url('assets/fonts/Poppins-Regular.ttf');
+}
+
 body {
     height: 100vh;
+    font-family: "Poppins";
+    letter-spacing: 1px;
 }
 
 .fa-count {
