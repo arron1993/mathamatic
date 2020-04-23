@@ -1,17 +1,36 @@
-<div class='w-100 row no-gutters p-4' style="font-size: 3rem">
-    <div *ngFor="let question of questions" class='col-12 row no-gutters py-3'>
-        <div class='col-12 d-flex justify-content-center'>
-            {{ question.detail }}
-            <input (input)="mark($event, question)" style="width: 5rem" type='text' class='text-center'>
-
-            <i *ngIf="question.correct !== undefined" class="fas" [ngClass]='{
-                "fa-check": question.correct,
-                "fa-times": !question.correct
+<div>
+    <div> Question {{ questionIndex + 1 }} of {{ questions.length }} </div>
+    <div> {{ totalCorrect }} Correct</div>
+</div>
+<div class='container-fluid d-flex justify-content-center'>
+    <div class='w-50 row no-gutters p-4 bg-white border shadow rounded' style="height: 50vh;">
+        <div class='col-12 row no-gutters py-3'>
+            <div class='col-12 d-flex justify-content-center text-responsive'>
+                {{ question.detail }}
+            </div>
+            <div class='col-12 d-flex justify-content-center'>
+                <div class='w-50'>
+                    <input
+                        [(ngModel)]='currentAnswer'
+                        (input)="onQuestionAnswer.next()"
+                        name='currentAnswer'
+                        type='text'
+                        class='text-center form-control'
+                        placeholder='Your Answer...'>
+                </div>
+            </div>
+        </div>
+        <div class='col-12 d-flex justify-content-between mt-auto'>
+            <i class="fas fa-5x fa-check icon-no-result" [ngClass]='{
+                "text-success": question.correct
+            }'></i>
+            <i class="fas fa-5x fa-times icon-no-result" [ngClass]='{
+                "text-danger": question.correct === false
             }'></i>
         </div>
     </div>
-
-    <div class='col-12'>
-        <button class='btn btn-c-primary' (click)="addQuestion()"> New Question </button>
-    </div>
+</div>
+<div class='col-12 d-flex justify-content-between py-3'>
+    <button class='btn btn-c-primary' (click)="previousQuestion()"> Previous Question </button>
+    <button class='btn btn-c-primary' (click)="nextQuestion()"> Next Question </button>
 </div>
