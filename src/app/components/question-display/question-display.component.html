@@ -12,6 +12,7 @@
                 <input
                     [(ngModel)]='currentAnswer'
                     (input)="onQuestionAnswer.next()"
+                    (keyUp.enter)="nextQuestion()"
                     name='currentAnswer'
                     type='text'
                     class='text-center form-control'
