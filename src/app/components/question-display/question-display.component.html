@@ -2,22 +2,20 @@
     <div> Question {{ questionIndex + 1 }} of {{ questions.length }} </div>
     <div> {{ totalCorrect }} Correct</div>
 </div>
-<div class='container-fluid d-flex justify-content-center'>
-    <div class='w-50 row no-gutters p-4 bg-white border shadow rounded' style="height: 50vh;">
+<div class='container-fluid row no-gutters'>
+    <div class='col-xs-12 col-md-6 offset-md-3 row no-gutters p-4 bg-white border shadow rounded' style="height: 50vh;">
         <div class='col-12 row no-gutters py-3'>
             <div class='col-12 d-flex justify-content-center text-responsive'>
                 {{ question.detail }}
             </div>
             <div class='col-12 d-flex justify-content-center'>
-                <div class='w-50'>
-                    <input
-                        [(ngModel)]='currentAnswer'
-                        (input)="onQuestionAnswer.next()"
-                        name='currentAnswer'
-                        type='text'
-                        class='text-center form-control'
-                        placeholder='Your Answer...'>
-                </div>
+                <input
+                    [(ngModel)]='currentAnswer'
+                    (input)="onQuestionAnswer.next()"
+                    name='currentAnswer'
+                    type='text'
+                    class='text-center form-control'
+                    placeholder='Your Answer...'>
             </div>
         </div>
         <div class='col-12 d-flex justify-content-between mt-auto'>
