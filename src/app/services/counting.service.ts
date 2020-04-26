@@ -23,9 +23,9 @@ export class CountingService {
 
         const missingIndex = this.numGen.getRandomInteger(0, sequence.length - 1);
         const questionAnswer = sequence[missingIndex];
-        sequence[missingIndex] = '_';
+        sequence[missingIndex] = ' _ ';
         return {
-            detail: sequence,
+            detail: sequence.join(', '),
             answer: questionAnswer,
             correct: undefined,
         };

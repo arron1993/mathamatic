@@ -8,12 +8,22 @@ export class AdditionService {
 
     constructor(private numGen: NumberGeneratorService) { }
 
-    createQuestion() {
-        const first = this.numGen.getRandomInteger(0, 20);
-        const second = this.numGen.getRandomInteger(0, 20);
+    createQuestion(difficulty) {
+        const lowerBoundary = 0;
+        const upperBoundary = Math.pow(10, difficulty);
+
+        const numbers = [];
+        let questionAnswer = 0;
+        const numberCount = this.numGen.getRandomInteger(1, Math.pow(2, difficulty));
+
+        for (let i = 0; i < numberCount; i++) {
+            const tmpNum = this.numGen.getRandomInteger(lowerBoundary, upperBoundary);
+            numbers.push(tmpNum);
+            questionAnswer += tmpNum;
+        }
         return {
-            detail: `${first} + ${second} = `,
-            answer: first + second
+            detail: numbers.join(' + ') + ' =',
+            answer: questionAnswer
         };
     }
 
