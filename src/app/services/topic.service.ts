@@ -6,21 +6,27 @@ import { Injectable } from '@angular/core';
 export class TopicService {
 
     constructor() { }
+
     topics = [{
         name: 'Counting',
-        icon: 'fa-count'
+        icon: 'fa-count',
+        difficulties: [1, 2, 3]
     }, {
         name: 'Addition',
-        icon: 'fa-plus'
+        icon: 'fa-plus',
+        difficulties: [1]
     }, {
         name: 'Subtraction',
-        icon: 'fa-minus'
+        icon: 'fa-minus',
+        difficulties: [1]
     }, {
         name: 'Multiplication',
-        icon: 'fa-times'
+        icon: 'fa-times',
+        difficulties: [1]
     }, {
         name: 'Division',
-        icon: 'fa-divide'
+        icon: 'fa-divide',
+        difficulties: [1]
     }];
 
     getTopics() {

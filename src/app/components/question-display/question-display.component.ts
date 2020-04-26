@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
@@ -20,14 +21,19 @@ export class QuestionDisplayComponent implements OnInit {
 
     onQuestionAnswer = new Subject<any>();
 
-    constructor() {
+    difficulty: number;
+
+    constructor(private route: ActivatedRoute) {
         this.onQuestionAnswer.pipe(debounceTime(250)).subscribe(e => {
             this.mark();
         });
     }
 
     ngOnInit() {
-        this.addQuestion();
+        this.route.params.subscribe(params => {
+            this.difficulty = parseInt(params.difficulty, 10);
+            this.addQuestion();
+        })
     }
 
     mark() {
@@ -37,7 +43,7 @@ export class QuestionDisplayComponent implements OnInit {
     }
 
     addQuestion() {
-        this.questions.push(this.service.createQuestion());
+        this.questions.push(this.service.createQuestion(this.difficulty));
     }
 
     nextQuestion() {

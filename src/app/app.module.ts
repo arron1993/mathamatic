@@ -13,6 +13,8 @@ import { TopicMultiplicationComponent } from './components/topic-multiplication/
 import { TopicDivisionComponent } from './components/topic-division/topic-division.component';
 import { QuestionDisplayComponent } from './components/question-display/question-display.component';
 
+import { TopicDifficultyPipe } from './pipes/topic-difficulty.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,7 @@ import { QuestionDisplayComponent } from './components/question-display/question
     TopicMultiplicationComponent,
     TopicDivisionComponent,
     QuestionDisplayComponent,
+    TopicDifficultyPipe,
   ],
   imports: [
     BrowserModule,

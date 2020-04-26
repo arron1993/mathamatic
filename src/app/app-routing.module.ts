@@ -10,11 +10,11 @@ import { TopicDivisionComponent } from './components/topic-division/topic-divisi
 
 const routes: Routes = [
     {path: 'topics', component: TopicListComponent},
-    {path: 'topics/counting', component: TopicCountingComponent},
-    {path: 'topics/addition', component: TopicAdditionComponent},
-    {path: 'topics/subtraction', component: TopicSubtractionComponent},
-    {path: 'topics/multiplication', component: TopicMultiplicationComponent},
-    {path: 'topics/division', component: TopicDivisionComponent},
+    {path: 'topics/counting/:difficulty', component: TopicCountingComponent},
+    {path: 'topics/addition/:difficulty', component: TopicAdditionComponent},
+    {path: 'topics/subtraction/:difficulty', component: TopicSubtractionComponent},
+    {path: 'topics/multiplication/:difficulty', component: TopicMultiplicationComponent},
+    {path: 'topics/division/:difficulty', component: TopicDivisionComponent},
     {path: '', redirectTo: '/topics', pathMatch: 'full'}
 ];
 

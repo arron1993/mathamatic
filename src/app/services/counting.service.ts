@@ -8,12 +8,17 @@ export class CountingService {
 
     constructor(private numGen: NumberGeneratorService) { }
 
-    createQuestion() {
-        const start = this.numGen.getRandomInteger(0, 50);
-        const end = this.numGen.getRandomInteger(start, start + 10);
+    createQuestion(difficulty: number) {
+        const start = this.numGen.getRandomInteger(0, Math.pow(10, difficulty));
+        const sequenceLength = 5;
+
+        const sequenceStep = this.getStep(difficulty);
         const sequence = [];
-        for (let i = start; i <= end; i++) {
-            sequence.push(i);
+
+        let nextNum = start;
+        for (let i = 0; i <= sequenceLength; i++) {
+            sequence.push(nextNum);
+            nextNum += sequenceStep;
         }
 
         const missingIndex = this.numGen.getRandomInteger(0, sequence.length - 1);
@@ -32,5 +37,12 @@ export class CountingService {
             res = true;
         }
         return res;
+    }
+
+    private getStep(difficulty) {
+        const start = 1;
+        const end = Math.pow(difficulty, 2);
+        return this.numGen.getRandomInteger(start, end);
+
     }
 }
