@@ -1,23 +1,25 @@
 <div class='row'>
     <div *ngFor="let topic of topics" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 p-4">
-        <a class='no-style' routerLink="/topics/{{ topic.name.toLowerCase() }}">
-            <div class='topic-card border rounded p-3 bg-c-secondary text-white'>
-                <div class='topic-card-image d-flex align-items-center justify-content-center'>
+
+        <div class='overflow-hidden topic-card border rounded p-3 bg-c-secondary text-white' (click)="selectTopic(topic)">
+            <div class='topic-card-image d-flex align-items-center justify-content-center' style="position: relative;">
+                <div *ngIf="selectedTopic !== topic">
                     <i class="fas fa-5x {{ topic.icon }}"> </i>
                 </div>
-                <div class='py-3'>
-                    <h5> {{ topic.name }}</h5>
-                    <div class='row no-gutters'>
-                        <span *ngFor='let difficulty of topic.difficulties' class='col-4 px-1'>
-                            <a class='w-100' routerLink="/topics/{{topic.name.toLowerCase()}}/{{difficulty}}">
-                                <button class='btn btn-c-tertiary w-100'>
-                                    {{ difficulty | topicDifficulty }}
-                                </button>
-                            </a>
-                        </span>
-                    </div>
+                <div [@difficultySlide] class='row no-gutters' *ngIf="selectedTopic == topic">
+                    <div class='col-12'> Select a difficulty </div>
+                    <span *ngFor='let difficulty of topic.difficulties' class='col-4 px-1'>
+                        <a class='w-100' routerLink="/topics/{{topic.name.toLowerCase()}}/{{difficulty}}">
+                            <button class='btn btn-c-tertiary w-100'>
+                                {{ difficulty | topicDifficulty }}
+                            </button>
+                        </a>
+                    </span>
                 </div>
             </div>
-        </a>
+            <div class='py-3'>
+                <h5> {{ topic.name }}</h5>
+            </div>
+        </div>
     </div>
 </div>
