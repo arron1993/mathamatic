@@ -1,6 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+    /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '~@fortawesome/fontawesome-free/css/all.css';
+@import './variables.scss';
 
 @font-face {
     font-family: "Poppins";
@@ -33,24 +34,41 @@ a.no-style {
 }
 
 .btn-c-primary {
-    background-color: #8F2D56;
+    &:hover  {
+        color: white;
+        filter: brightness(0.9);
+        transition: 0.2s;
+    }
+
+    background-color: $c-primary;
     color: white;
 }
-.btn-c-primary:hover  {
-    color: white;
-    filter: brightness(0.9);
-    transition: 0.2s;
-}
+
 .bg-c-primary {
-    background-color: #8F2D56;
+    background-color: $c-primary;
 }
 
 .text-c-primary {
-    color: #8F2D56;
+    color: $c-primary;
 }
+
 .bg-c-secondary {
-    background-color: #218380;
+    background-color: $c-secondary;
 }
+
 .text-responsive {
   font-size: calc(100% + 1vw + 1vh);
+}
+
+
+.btn-c-tertiary {
+    &:hover {
+        color: white;
+        filter: brightness(0.9);
+        transition: 0.2s;
+    }
+
+    background-color: $c-tertiary;
+    border-color: $c-tertiary;
+    color: #fff;
 }
