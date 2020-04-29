@@ -1,27 +1,29 @@
 # Mathamatic
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+A simple Angular project website that present the user with various maths topics and randomly generates questions to answers based on a user
+specified difficulty.
 
-## Development server
+Main aim is to provide something simple that maths students can use to get practice questions.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Building
 
-## Code scaffolding
+Just standard Angular so clone the repo `cd mathamatic`, `ng build --prod` or `yarn build`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Then scp/rsync the content `dist/` to your favourite webserver.
 
-## Build
+## Deploying
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+For deploying Angular apps I just use Nginx, its simple enough.
 
-## Running unit tests
+Something like in the relevant server directive.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`location = /index.html {
+    add_header Cache-Control no-cache;
+    alias /var/www/html/mathamatic/index.html;
+}
+location ~ ^(/.*) {
+    try_files $1 /index.html;
+}`
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Having both is important so any none / urls get picked up by the angular routing
+rather than Nginx.
