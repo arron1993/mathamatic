@@ -18,7 +18,7 @@ export class TopicService {
     }, {
         name: 'Subtraction',
         icon: 'fa-minus',
-        difficulties: [1]
+        difficulties: [1, 2, 3]
     }, {
         name: 'Multiplication',
         icon: 'fa-times',
