@@ -9,7 +9,7 @@ Main aim is to provide something simple that maths students can use to get pract
 
 Just standard Angular so clone the repo `cd mathamatic`, `ng build --prod` or `yarn build`.
 
-Then scp/rsync the content `dist/` to your favourite webserver.
+Then scp/rsync the contents of `dist/` to your favourite webserver.
 
 ## Deploying
 
