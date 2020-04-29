@@ -17,7 +17,8 @@ For deploying Angular apps I just use Nginx, its simple enough.
 
 Something like in the relevant server directive.
 
-```location = /index.html {
+```
+location = /index.html {
     add_header Cache-Control no-cache;
     alias /var/www/html/mathamatic/index.html;
 }
