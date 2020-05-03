@@ -14,11 +14,14 @@ import {
     animations: [
         trigger('difficultySlide', [
             transition(':enter', [
-                style({transform: 'translateY(-200%)'}),
-                animate('400ms ease-in', style({transform: 'translateY(0%)'}))
+                style({transform: 'translateX(-200%)'}),
+                animate('400ms 230ms ease-in', style({
+                    transform: 'translateX(0%)'}))
             ]),
             transition(':leave', [
-                animate('0ms ease-in', style({transform: 'translateY(-100%)'}))
+                style({position: 'absolute'}),
+                animate('200ms ease-in', style({
+                    transform: 'translateX(200%)'}))
             ])
         ])
     ]

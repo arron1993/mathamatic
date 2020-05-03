@@ -1,16 +1,15 @@
 <div class='row'>
     <div *ngFor="let topic of topics" class="col-xs-12 col-sm-6 col-md-4 col-xl-3 p-4">
-
-        <div class='overflow-hidden topic-card border rounded p-3 bg-c-secondary text-white' (click)="selectTopic(topic)">
-            <div class='topic-card-image d-flex align-items-center justify-content-center' style="position: relative;">
-                <div *ngIf="selectedTopic !== topic">
+        <div class='overflow-hidden topic-card p-3 bg-c-secondary text-white' (click)="selectTopic(topic)">
+            <div class='position-relative topic-card-image d-flex align-items-center justify-content-center'>
+                <div [@difficultySlide]  *ngIf="selectedTopic !== topic" class='w-100 text-center'>
                     <i class="fas fa-5x {{ topic.icon }}"> </i>
                 </div>
                 <div [@difficultySlide] class='row no-gutters' *ngIf="selectedTopic == topic">
                     <div class='col-12'> Select a difficulty </div>
                     <span *ngFor='let difficulty of topic.difficulties' class='col-12 mb-1 px-1'>
                         <a class='w-100' routerLink="/topics/{{topic.name.toLowerCase()}}/{{difficulty}}">
-                            <button class='btn btn-c-tertiary w-100'>
+                            <button class='btn btn-light w-100'>
                                 {{ difficulty | topicDifficulty }}
                             </button>
                         </a>
