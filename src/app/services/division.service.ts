@@ -14,7 +14,7 @@ export class DivisionService {
         // out factors
         const first = this.numGen.getRandomInteger(1, 10 * difficulty);
         const second = this.numGen.getRandomInteger(1, 10);
-        const answer = first * second
+        const answer = first * second;
         return {
             detail: `${answer} / ${second}`,
             answer: first
