@@ -22,11 +22,11 @@ export class TopicService {
     }, {
         name: 'Multiplication',
         icon: 'fa-times',
-        difficulties: [1]
+        difficulties: [1, 2, 3]
     }, {
         name: 'Division',
         icon: 'fa-divide',
-        difficulties: [1]
+        difficulties: [1, 2, 3]
     }];
 
     getTopics() {

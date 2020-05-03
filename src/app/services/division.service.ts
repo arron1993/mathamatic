@@ -8,22 +8,16 @@ export class DivisionService {
 
     constructor(private numGen: NumberGeneratorService) { }
 
-    createQuestion() {
-        const first = this.numGen.getRandomInteger(0, 50);
-        const factors = [];
-
-        for (let i = 0; i < first + 1; i++) {
-            if (first % i === 0) {
-                factors.push(i);
-            }
-        }
-
-        // -1 from length so we get the last index.
-        const second = factors[this.numGen.getRandomInteger(0, factors.length - 1)];
-
+    createQuestion(difficulty) {
+        // instead of trying to divide things, multiply them instead
+        // its easier to get reasonable questions without having to work
+        // out factors
+        const first = this.numGen.getRandomInteger(1, 10 * difficulty);
+        const second = this.numGen.getRandomInteger(1, 10);
+        const answer = first * second
         return {
-            detail: `${first} / ${second}`,
-            answer: first / second
+            detail: `${answer} / ${second}`,
+            answer: first
         };
     }
 

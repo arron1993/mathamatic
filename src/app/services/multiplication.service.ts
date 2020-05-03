@@ -8,9 +8,9 @@ export class MultiplicationService {
 
     constructor(private numGen: NumberGeneratorService) { }
 
-    createQuestion() {
-        const first = this.numGen.getRandomInteger(0, 10);
-        const second = this.numGen.getRandomInteger(0, 10);
+    createQuestion(difficulty) {
+        const first = this.numGen.getRandomInteger(0, 10 * difficulty);
+        const second = this.numGen.getRandomInteger(0, 10 * difficulty);
         return {
             detail: `${first} x ${second} = `,
             answer: first * second
