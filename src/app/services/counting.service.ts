@@ -9,7 +9,7 @@ export class CountingService {
     constructor(private numGen: NumberGeneratorService) { }
 
     createQuestion(difficulty: number) {
-        const start = this.numGen.getRandomInteger(0, Math.pow(10, difficulty));
+        const start = this.numGen.getRandomInteger(0, 100);
         const sequenceLength = 5;
 
         const sequenceStep = this.getStep(difficulty);
@@ -41,7 +41,7 @@ export class CountingService {
 
     private getStep(difficulty) {
         const start = 1;
-        const end = Math.pow(difficulty, 2);
+        const end = Math.pow(difficulty, 2) + Math.pow(difficulty - 1, 2);
         return this.numGen.getRandomInteger(start, end);
 
     }
