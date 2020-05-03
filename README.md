@@ -1,6 +1,6 @@
 # Mathamatic
 
-A simple Angular project website that present the user with various maths topics and randomly generates questions to answers based on a user
+A simple Angular website that presents the user with various maths topics and randomly generates questions to answer based on a user
 specified difficulty.
 
 Main aim is to provide something simple that maths students can use to get practice questions.
