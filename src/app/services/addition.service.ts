@@ -14,7 +14,7 @@ export class AdditionService {
 
         const numbers = [];
         let questionAnswer = 0;
-        const numberCount = this.numGen.getRandomInteger(1, Math.pow(2, difficulty));
+        const numberCount = this.numGen.getRandomInteger(2, Math.pow(2, difficulty));
 
         for (let i = 0; i < numberCount; i++) {
             const tmpNum = this.numGen.getRandomInteger(lowerBoundary, upperBoundary);

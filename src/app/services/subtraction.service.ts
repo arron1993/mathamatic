@@ -15,7 +15,7 @@ export class SubtractionService {
         const numbers = [];
         let questionAnswer;
 
-        const numberCount = this.numGen.getRandomInteger(1, difficulty + 1);
+        const numberCount = this.numGen.getRandomInteger(2, difficulty + 1);
 
         for (let i = 0; i < numberCount; i++) {
             let tmpNum = this.numGen.getRandomInteger(lowerBoundary, upperBoundary);
