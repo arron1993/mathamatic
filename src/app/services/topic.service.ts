@@ -8,6 +8,10 @@ export class TopicService {
     constructor() { }
 
     topics = [{
+        name: 'Numbers',
+        icon: '',
+        difficulties: [1]
+    }, {
         name: 'Counting',
         icon: 'fa-count',
         difficulties: [1, 2, 3]
@@ -27,6 +31,18 @@ export class TopicService {
         name: 'Division',
         icon: 'fa-divide',
         difficulties: [1, 2, 3]
+    }, {
+        name: 'Fractions',
+        icon: '',
+        difficulties: [1]
+    }, {
+        name: 'Measuring',
+        icon: '',
+        difficulties: [1]
+    }, {
+        name: 'Shapes',
+        icon: '',
+        difficulties: [1]
     }];
 
     getTopics() {
